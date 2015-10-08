@@ -21,6 +21,8 @@ public class QueueCircTest {
 		
 		System.out.println(q.toString());
 		
+		System.out.println("Did it save?");
+		
 	}
 		/*		
 		q.enqueue(1);
