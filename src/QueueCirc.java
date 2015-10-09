@@ -33,13 +33,12 @@ public class QueueCirc<T> implements QueueInterface<T>
 		
 		if (isFull() == false){
 			rear = rear + 1;
-			if (rear == A.length){
+			if (rear == A.length-1){
 				rear = 0;
 			}
 			A[rear] = item;
 		}
-		System.out.println("The value of the front is " + front);
-		System.out.println("The value of the rear is " + rear);
+		
 	}
 	
     /*
@@ -50,10 +49,16 @@ public class QueueCirc<T> implements QueueInterface<T>
 	
 	public T dequeue()
 	{
-		front++;		 //increment front
+		if (front == A.length-1){
+			front = 0;
+			
+		}
+		else {front++;}
+				 //increment front
+	
 		System.out.println("The value of the front is " + front);
 		System.out.println("The value of the rear is " + rear);
-		return A[front]; //print new front value
+		return A[front];//print new front value
 		
 	}
 	
@@ -117,17 +122,19 @@ public class QueueCirc<T> implements QueueInterface<T>
     	}
  
     	int tempFront = front;
-    	while (tempFront != rear+1){
-    		System.out.println("The value of tempFront is " + tempFront);
+    	int tempRear = rear; 
+    	if ((tempRear + 1) == A.length) {
+    		tempRear = 0;
+    	}
+    	while (tempFront != tempRear + 1){
     		if (tempFront == A.length-1){
     			tempFront=0;
     			value += A[tempFront] + ",";
+    			tempFront++;
     		}
     		else {value += A[tempFront] + ","; tempFront++;}
     	}
-    	
-  
-    	
+
     	return value;
     }
 }

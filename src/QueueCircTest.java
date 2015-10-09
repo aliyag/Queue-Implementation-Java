@@ -14,25 +14,7 @@ public class QueueCircTest {
 		QueueCirc<Integer> q = new QueueCirc<Integer>();
 		Integer n = 1;
 
-		for (int i = 0; i < 30; i++) {
-			q.enqueue(i);
-		}
-		
-	//	System.out.println(q.toString());		
 	
-		
-	
-		for (int i = 0; i < 19; i++ ){
-			System.out.println(q.toString());
-			q.dequeue();
-		}
-		
-	//	System.out.println(q.toString());
-		
-	//	System.out.println(q.front());
-		
-	}
-		/*		
 		q.enqueue(1);
 		
 		
@@ -145,5 +127,5 @@ public class QueueCircTest {
 		System.out.println(q.toString());
 		
 	}
-*/
+
 	}
