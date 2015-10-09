@@ -126,7 +126,7 @@ public class QueueCirc<T> implements QueueInterface<T>
     	if ((tempRear + 1) == A.length) {
     		tempRear = 0;
     	}
-    	while (tempFront != tempRear + 1){
+    	while (tempFront != tempRear+1){
     		if (tempFront == A.length-1){
     			tempFront=0;
     			value += A[tempFront] + ",";
