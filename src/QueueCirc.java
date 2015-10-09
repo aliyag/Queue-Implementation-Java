@@ -49,15 +49,15 @@ public class QueueCirc<T> implements QueueInterface<T>
 	
 	public T dequeue()
 	{
+		if (isEmpty()==true){
+			System.out.println("The queue is empty");
+			return null;
+		}
 		if (front == A.length-1){
 			front = 0;
-			
 		}
 		else {front++;}
 				 //increment front
-	
-		System.out.println("The value of the front is " + front);
-		System.out.println("The value of the rear is " + rear);
 		return A[front];//print new front value
 		
 	}

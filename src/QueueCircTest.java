@@ -9,17 +9,11 @@ public class QueueCircTest {
 	
 	public static void main(String[] args) 
 	{
-
-		
 		QueueCirc<Integer> q = new QueueCirc<Integer>();
-		Integer n = 1;
-
-	
-		q.enqueue(1);
+		Integer n = null;
 		
 		
 		// Check if the queue is empty.
-		
 		
 		if (q.isEmpty())
 			System.out.println("The queue is EMPTY");
@@ -128,4 +122,4 @@ public class QueueCircTest {
 		
 	}
 
-	}
+}
