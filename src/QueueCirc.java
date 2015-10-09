@@ -30,8 +30,6 @@ public class QueueCirc<T> implements QueueInterface<T>
 	
 	public void enqueue(T item)
 	{ 
-		System.out.println("The front is " + front);
-		System.out.println("The rear is " + rear);
 		
 		if (isFull() == false){
 			rear = rear + 1;
@@ -40,6 +38,8 @@ public class QueueCirc<T> implements QueueInterface<T>
 			}
 			A[rear] = item;
 		}
+		System.out.println("The value of the front is " + front);
+		System.out.println("The value of the rear is " + rear);
 	}
 	
     /*
@@ -50,7 +50,11 @@ public class QueueCirc<T> implements QueueInterface<T>
 	
 	public T dequeue()
 	{
-		return null;
+		front++;		 //increment front
+		System.out.println("The value of the front is " + front);
+		System.out.println("The value of the rear is " + rear);
+		return A[front]; //print new front value
+		
 	}
 	
 	/*
@@ -60,7 +64,7 @@ public class QueueCirc<T> implements QueueInterface<T>
 	
     public T front()
     {
-    	return null;
+    	return A[front]; //return front item
     }
     
     /*
@@ -100,7 +104,7 @@ public class QueueCirc<T> implements QueueInterface<T>
     
     /*
      *  toString() - return a printable display of
-     *               the items in the queue.
+     *               the items in the queue. 
      */
     
     public String toString()
@@ -111,11 +115,19 @@ public class QueueCirc<T> implements QueueInterface<T>
     	if (isEmpty()){
     		return result;
     	}
-    	int i = front; 
-    	while (i < (A.length-2)){
-    		i++;
-    		value += A[i] + ",";
+ 
+    	int tempFront = front;
+    	while (tempFront != rear+1){
+    		System.out.println("The value of tempFront is " + tempFront);
+    		if (tempFront == A.length-1){
+    			tempFront=0;
+    			value += A[tempFront] + ",";
+    		}
+    		else {value += A[tempFront] + ","; tempFront++;}
     	}
+    	
+  
+    	
     	return value;
     }
 }

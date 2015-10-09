@@ -14,14 +14,22 @@ public class QueueCircTest {
 		QueueCirc<Integer> q = new QueueCirc<Integer>();
 		Integer n = 1;
 
-		for (int i = 0; i < 44; i++) {
-			System.out.println("The value of i is " + i);
+		for (int i = 0; i < 30; i++) {
 			q.enqueue(i);
 		}
 		
-		System.out.println(q.toString());
+	//	System.out.println(q.toString());		
+	
 		
-		System.out.println("Did it save?");
+	
+		for (int i = 0; i < 19; i++ ){
+			System.out.println(q.toString());
+			q.dequeue();
+		}
+		
+	//	System.out.println(q.toString());
+		
+	//	System.out.println(q.front());
 		
 	}
 		/*		
